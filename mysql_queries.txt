@@ -78,4 +78,21 @@ ALTER TABLE EMPLOYEES RENAME TO CODEGNAN_EMP;
 -- Show tables in the current database to verify the table name change
 SHOW TABLES;
  
+
+======================================================
+CREATE TABLE company_staff (
+    emp_id INT,
+    age TINYINT,
+    experience SMALLINT,
+    gender CHAR(1),
+    emp_name VARCHAR(50),
+    address TINYTEXT,
+    salary DECIMAL(10,2),
+    department ENUM('HR','IT','Sales','Finance','Support'),
+    skills SET('Java','Python','SQL','Excel','Communication'),
+    joining_date DATE
+);
  
+DESC COMPANY_STAFF;
+SHOW TABLES;
+
