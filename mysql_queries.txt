@@ -1,0 +1,81 @@
+-- Show existing databases (assuming you're already connected to your MySQL server)
+SHOW DATABASES;
+ 
+-- Create a new database called CODEGNAN
+CREATE DATABASE CODEGNAN;
+ 
+-- Switch to the newly created database
+USE CODEGNAN;
+ 
+Create
+-- Create a table named EMPLOYEES within the CODEGNAN database
+CREATE TABLE EMPLOYEES (
+    EMP_ID CHAR(5),
+    FNAME VARCHAR(50),
+    LNAME VARCHAR(50),
+    AGE INT,
+    DOJ DATE,
+    ADDRESS TINYTEXT,
+    DEPT VARCHAR(20)
+);
+ 
+-- Show tables in the current database (CODEGNAN)
+SHOW TABLES;
+ 
+-- Describe the structure of the EMPLOYEES table
+DESC EMPLOYEES;
+ 
+-- Alternatively, show columns information for the EMPLOYEES table
+SHOW COLUMNS FROM EMPLOYEES;
+ 
+ALTER
+-- Modify the FNAME column in the EMPLOYEES table to VARCHAR(30)
+ALTER TABLE EMPLOYEES MODIFY FNAME VARCHAR(30);
+ 
+-- Show columns information for the EMPLOYEES table to verify changes
+SHOW COLUMNS FROM EMPLOYEES;
+ 
+-- Add a new column named LOCATION of type TINYTEXT to the EMPLOYEES table
+ALTER TABLE EMPLOYEES ADD LOCATION TINYTEXT;
+ 
+-- Show columns information for the EMPLOYEES table to verify changes
+SHOW COLUMNS FROM EMPLOYEES;
+-- Add a new column named PFID of type INT after the ADDRESS column
+ALTER TABLE EMPLOYEES ADD PFID INT AFTER ADDRESS;
+ 
+-- Show columns information for the EMPLOYEES table to verify changes
+SHOW COLUMNS FROM EMPLOYEES;
+ 
+Rename
+-- Rename the FNAME column to FIRSTNAME in the EMPLOYEES table
+ALTER TABLE EMPLOYEES CHANGE FNAME FIRSTNAME VARCHAR(30);
+ 
+-- Show columns information for the EMPLOYEES table to verify changes
+SHOW COLUMNS FROM EMPLOYEES;
+ 
+-- Rename the LNAME column to LASTNAME and change its data type to VARCHAR(60)
+ALTER TABLE EMPLOYEES CHANGE COLUMN LNAME LASTNAME VARCHAR(60);
+ 
+-- Describe the structure of the EMPLOYEES table to verify changes
+DESC EMPLOYEES;
+ 
+drop
+-- Drop the PFID column from the EMPLOYEES table
+ALTER TABLE EMPLOYEES DROP COLUMN PFID;
+ 
+-- Describe the structure of the EMPLOYEES table to verify changes
+DESC EMPLOYEES;
+ 
+-- Drop the LOCATION column from the EMPLOYEES table
+ALTER TABLE EMPLOYEES DROP COLUMN LOCATION;
+ 
+-- Describe the structure of the EMPLOYEES table to verify changes
+DESC EMPLOYEES;
+ 
+-- Rename the EMPLOYEES table to CODEGNAN_EMP
+ALTER TABLE EMPLOYEES RENAME TO CODEGNAN_EMP;
+ 
+-- Show tables in the current database to verify the table name change
+SHOW TABLES;
+ 
+ 
