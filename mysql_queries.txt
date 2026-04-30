@@ -96,3 +96,61 @@ CREATE TABLE company_staff (
 DESC COMPANY_STAFF;
 SHOW TABLES;
 
+-- 1. Add email column
+ALTER TABLE company_staff
+ADD email VARCHAR(100);
+
+-- 2. Add phone_number column
+ALTER TABLE company_staff
+ADD phone_number BIGINT;
+
+-- 3. Add bonus column after salary
+ALTER TABLE company_staff
+ADD bonus DECIMAL(8,2) AFTER salary;
+
+-- 4. Add status column after department
+ALTER TABLE company_staff
+ADD status VARCHAR(20) AFTER department;
+
+-- 5. Add company_name column first
+ALTER TABLE company_staff
+ADD company_name VARCHAR(50) FIRST;
+
+-- 6. Add qualification column after emp_name
+ALTER TABLE company_staff
+ADD qualification VARCHAR(50) AFTER emp_name;
+
+-- 7. Modify emp_name column
+ALTER TABLE company_staff
+MODIFY emp_name VARCHAR(100);
+
+-- 8. Modify salary column
+ALTER TABLE company_staff
+MODIFY salary DECIMAL(12,2);
+
+-- 9. Rename emp_name to employee_name
+ALTER TABLE company_staff
+RENAME COLUMN emp_name TO employee_name;
+
+-- 10. Rename joining_date to date_of_joining
+ALTER TABLE company_staff
+RENAME COLUMN joining_date TO date_of_joining;
+
+-- 11. Drop bonus column
+ALTER TABLE company_staff
+DROP COLUMN bonus;
+
+-- 12. Drop phone_number column
+ALTER TABLE company_staff
+DROP COLUMN phone_number;
+
+-- 13. Rename table company_staff to staff_records
+ALTER TABLE company_staff
+RENAME TO staff_records;
+
+-- 14. Rename table staff_records back to company_staff
+ALTER TABLE staff_records
+RENAME TO company_staff;
+
+-- 15. Add last_updated column before joining_date
+ALTER TABLE STAFF_RECORDS ADD LAST_UPDATED DATE AFTER SKILLS;
