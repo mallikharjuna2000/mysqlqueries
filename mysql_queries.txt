@@ -155,16 +155,24 @@ RENAME TO company_staff;
 -- 15. Add last_updated column before joining_date
 ALTER TABLE STAFF_RECORDS ADD LAST_UPDATED DATE AFTER SKILLS;
 
+==========================================================================
+CREATE TABLE employees (
+    emp_id VARCHAR(10),
+    firstname VARCHAR(30),
+    last_name VARCHAR(30),
+    age INT,
+    doj DATE,
+    address VARCHAR(30),
+    dept VARCHAR(30)
+);
 
-INSERT INTO CODEGNAN_EMP(EMP_ID,FIRSTNAME,LAST_NAME,AGE,DOJ,ADDRESS,DEPT)
-     VALUES
-     ('E001','MALLI','ARJUN',27,'2024-03-20','HYD','JAVA');
-
-
- INSERT INTO CODEGNAN_EMP(EMP_ID,FIRSTNAME,LAST_NAME,AGE,DOJ,ADDRESS,DEPT)
-     VALUES
-     ('E002','SAI','VARDAN',25,'2024-03-18','BNG','PYTHON'),
-     ('E003','MAHESH','BABU',29,'2023-09-23','VJY','SAP');
-
-SELECT*FROM CODEGNAN_EMP;
-
+INSERT INTO employees (emp_id, firstname, last_name, age, doj, address, dept) VALUES
+('E001', 'MALLI',  'ARJUN', 27, '2024-03-20', 'HYD',      'JAVA'),
+('E002', 'SAI',    'VARDAN',25, '2024-03-18', 'BNG',      'PYTHON'),
+('E003', 'MAHESH', 'BABU',  29, '2023-09-23', 'VJY',      'SAP'),
+('E004', 'SUNNY',  'ARUN',  37, '2010-12-12', 'MUMBAI',   'SALES'),
+('E005', 'BUNNY',  'VASU',  40, '2005-05-05', 'DELHI',    'FILM'),
+('E006', 'VINNY',  'JANI',  13, '2015-09-09', 'KOLKATTA', 'TRAINING'),
+('E007', 'CHINNY', NULL,    45, NULL,         'NOIDA',    'BANKING'),
+('E008', 'JUNNY',  'SINA',  NULL, '2019-09-09', 'SALES',  NULL),
+('E009', 'JANI',   'BASHA', 25, '2025-10-23', 'HYD',      'PHARMA');
