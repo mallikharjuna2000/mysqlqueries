@@ -251,6 +251,21 @@ INSERT INTO Products VALUES
 (5, 'Marker', 15.00, 80);
 
 
+CREATE TABLE StudentScores (
+   id INT,
+   name VARCHAR(100),
+   subject VARCHAR(50),
+   marks INT
+);
+
+INSERT INTO StudentScores VALUES
+(1, 'Alice', 'Math', 95),
+(2, 'Bob', 'Math', 76),
+(3, 'Charlie', 'Math', 59),
+(4, 'Diana', 'Math', 88),
+(5, 'Eve', 'Math', 40),
+(6, 'Frank', 'Math', 95);
+
 
 
 
