@@ -176,3 +176,92 @@ INSERT INTO employees (emp_id, firstname, last_name, age, doj, address, dept) VA
 ('E007', 'CHINNY', NULL,    45, NULL,         'NOIDA',    'BANKING'),
 ('E008', 'JUNNY',  'SINA',  NULL, '2019-09-09', 'SALES',  NULL),
 ('E009', 'JANI',   'BASHA', 25, '2025-10-23', 'HYD',      'PHARMA');
+
+
+
+
+
+
+
+
+PRODUCT
+PROD_ID INT
+PRODUCT_NAME VARCHAR
+CATEGORY VARCHAR
+PRICE DECIMAL
+QUANTITY INT 
+BRAND  VARCHAR
+MFG_DATE  DATE
+
+INSERT
+1.Insert a new product Tablet with your own values.
+2.Insert a new product Printer in Electronics category.
+3.Insert 2 new products in one query.
+UPDATE
+1.Update price of product_id 101 to 60000.
+2.Increase quantity of Mobile by 10.
+3.Change brand of Headphones to Sony.
+4.Update category of Smart Watch to Electronics.
+ALTER
+1.Add a new column discount with datatype DECIMAL(5,2).
+2.Add a new column supplier after brand.
+3.Modify product_name size to VARCHAR(100).
+4.Rename column mfg_date to manufacture_date.
+DROP
+1.Drop column discount.
+2.Drop column supplier.
+RENAME
+1.Rename table product to product_details.
+2.Rename table product_details back to product.
+CREATE TABLE product (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(50),
+    category VARCHAR(30),
+    price DECIMAL(10,2),
+    quantity INT,
+    brand VARCHAR(30),
+    mfg_date DATE
+);
+
+INSERT INTO product (product_id, product_name, category, price, quantity, brand, mfg_date) VALUES
+(101, 'Laptop',      'Electronics', 55000.00, 10, 'Dell',    '2025-01-10'),
+(102, 'Mobile',      'Electronics', 25000.00, 25, 'Samsung', '2025-02-15'),
+(103, 'Headphones',  'Accessories', 2000.00, 50, 'Boat',     '2025-03-12'),
+(104, 'Keyboard',    'Accessories', 1500.00, 40, 'Logitech', '2025-01-25'),
+(105, 'Refrigerator','Appliances', 32000.00, 8,  'LG',       '2024-12-20'),
+(106, 'Washing Machine','Appliances',28000.00, 6,'IFB',      '2025-02-05'),
+(107, 'Smart Watch', 'Wearables',   5000.00, 30, 'Noise',    '2025-03-01');
+
+
+
+
+===========================================
+CREATE TABLE Products (
+   id INT,
+   name VARCHAR(100),
+   price DECIMAL(10,2),
+   qty INT
+);
+
+INSERT INTO Products VALUES
+(1, 'Pen', 10.00, 100),
+(2, 'Notebook', 25.00, 50),
+(3, 'Pencil', 5.00, 200),
+(4, 'Eraser', 3.00, 300),
+(5, 'Marker', 15.00, 80);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
