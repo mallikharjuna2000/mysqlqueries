@@ -284,6 +284,24 @@ INSERT INTO Employees VALUES
 (7, 'Kiran Rao', 'IT', 60000, TRUE),
 (8, 'Pooja Verma', 'Marketing', 27000, TRUE);
 
+===============================================================
+
+
+CREATE TABLE Projects (
+   id INT,
+   name VARCHAR(100),
+   assignedto VARCHAR(100),
+   start DATE,
+   end DATE
+);
+
+INSERT INTO Projects VALUES
+(1, 'Website Revamp', 'Alice', '2024-01-15', '2024-03-01'),
+(2, 'Mobile App', 'Bob', '2024-02-01', NULL),
+(3, 'Data Migration', NULL, NULL, NULL),
+(4, 'SEO Optimization', 'Eve', '2024-03-10', '2024-04-20'),
+(5, 'Cloud Migration', NULL, '2024-03-15', NULL);
+
 
 
 
