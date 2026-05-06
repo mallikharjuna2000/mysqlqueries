@@ -295,6 +295,31 @@ CREATE TABLE Projects (
    end DATE
 );
 
+
+=========================================
+CREATE TABLE STUDENTS (
+    StudentID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(50),
+    Age INT,
+    Department VARCHAR(30),
+    Marks INT,
+    City VARCHAR(30)
+);
+
+-- Insert Sample Data (without StudentID)
+INSERT INTO STUDENTS (Name, Age, Department, Marks, City) VALUES
+('Anil', 20, 'CSE', 85, 'Hyderabad'),
+('Sneha', 22, 'ECE', 75, 'Mumbai'),
+('Ravi', 20, 'CSE', NULL, 'Hyderabad'),
+('Divya', 23, 'MECH', 65, NULL),
+('Kiran', 22, 'ECE', 75, 'Pune'),
+('Varun', 21, 'CSE', 92, 'Chennai'),
+('Priya', 20, 'EEE', 88, 'Delhi'),
+('John', 22, 'MECH', 55, 'Mumbai'),
+('Rekha', 21, 'ECE', 75, 'Pune'),
+('Ramesh', 23, 'EEE', NULL, 'Delhi');
+
+
 INSERT INTO Projects VALUES
 (1, 'Website Revamp', 'Alice', '2024-01-15', '2024-03-01'),
 (2, 'Mobile App', 'Bob', '2024-02-01', NULL),
@@ -303,7 +328,7 @@ INSERT INTO Projects VALUES
 (5, 'Cloud Migration', NULL, '2024-03-15', NULL);
 
 
-
+=================================================================================================
 
 
 
