@@ -358,8 +358,37 @@ INSERT INTO sales (sale_id, product, category, units_sold, unit_price, region) V
 
 
 
+==================================================
+-- Create the Course table
+CREATE TABLE Course (
+    course_id INT PRIMARY KEY,
+    cname VARCHAR(100),
+    instructor VARCHAR(100),
+    ccost DECIMAL(10,2)
+);
 
+-- Insert sample data into Course table
+INSERT INTO Course (course_id, cname, instructor, ccost) VALUES
+(1, 'Mathematics', 'Dr. Ramesh', 15000.00),
+(2, 'Physics', 'Dr. Suresh', 18000.00),
+(3, 'Chemistry', 'Dr. Anjali', 17000.00),
+(4, 'Biology', 'Dr. Kavitha', 16000.00),
+(5, 'History', 'Dr. Prakash', 14000.00);
 
+-- Create the Course_Completed table
+CREATE TABLE Course_Completed (
+    course_id INT PRIMARY KEY,
+    cname VARCHAR(100),
+    instructor VARCHAR(100),
+    ccost DECIMAL(10,2)
+);
+
+-- Insert sample data into Course_Completed table
+INSERT INTO Course_Completed (course_id, cname, instructor, ccost) VALUES
+(2, 'Physics', 'Dr. Suresh', 18000.00),
+(3, 'Chemistry', 'Dr. Anjali', 17000.00),
+(6, 'Computer Science', 'Dr. Rajesh', 25000.00),
+(7, 'Art', 'Dr. Deepika', 12000.00);
 
 
 
