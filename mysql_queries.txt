@@ -678,20 +678,81 @@ INSERT INTO photo_tags (photo_id, tag_id)
 
 
 
+=========================================================================================
+ -- Create Database
+CREATE DATABASE studentdb;
 
+-- Use Database
+USE studentdb;
 
+-- Create Students Table
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    enrollment_year INT
+);
 
+-- Create Subjects Table
+CREATE TABLE Subjects (
+    subject_id INT PRIMARY KEY,
+    subject_name VARCHAR(50)
+);
 
+-- Create Exams Table
+CREATE TABLE Exams (
+    exam_id INT PRIMARY KEY,
+    exam_name VARCHAR(50),
+    exam_date DATE
+);
 
+-- Create Marks Table
+CREATE TABLE Marks (
+    mark_id INT PRIMARY KEY,
+    student_id INT,
+    subject_id INT,
+    exam_id INT,
+    score INT,
+    
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (subject_id) REFERENCES Subjects(subject_id),
+    FOREIGN KEY (exam_id) REFERENCES Exams(exam_id)
+);
 
+-- Insert Students Data
+INSERT INTO Students VALUES
+(1, 'Aarav', 'Sharma', 2023),
+(2, 'Diya', 'Patel', 2023),
+(3, 'Vihaan', 'Rao', 2024),
+(4, 'Ananya', 'Singh', 2024);
 
+-- Insert Subjects Data
+INSERT INTO Subjects VALUES
+(101, 'Mathematics'),
+(102, 'Science'),
+(103, 'Hindi Literature');
 
+-- Insert Exams Data
+INSERT INTO Exams VALUES
+(1, 'Half-Yearly 2024', '2024-09-15'),
+(2, 'Final Annual 2024', '2024-03-20');
 
+-- Insert Marks Data
+INSERT INTO Marks VALUES
+(1, 1, 101, 1, 85),  
+(2, 1, 102, 1, 90),  
+(3, 2, 101, 1, 75),  
+(4, 2, 102, 1, 60),  
+(5, 3, 101, 1, 95),  
+(6, 1, 101, 2, 88),  
+(7, 2, 101, 2, 79),  
+(8, 3, 101, 2, 92);
 
-
-
-
-
+-- Verify Data
+SELECT * FROM Students;
+SELECT * FROM Subjects;
+SELECT * FROM Exams;
+SELECT * FROM Marks;
 
 
 
