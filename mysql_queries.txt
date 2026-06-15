@@ -985,6 +985,38 @@ SELECT * FROM Order_Details;
 
 
 
+=======================================================================================
+min and max salaries concept
+====================================
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50),
+    salary INT,
+    age INT,
+    city VARCHAR(50)
+);
+INSERT INTO employees (emp_id, name, department, salary, age, city) VALUES
+(1,  'Aarav',      'HR',        40000, 28, 'Delhi'),
+(2,  'Bhavana',    'IT',        60000, 32, 'Mumbai'),
+(3,  'Chirag',     'Finance',   55000, 29, 'Bangalore'),
+(4,  'Divya',      'IT',        62000, 35, 'Mumbai'),
+(5,  'Eshan',      'HR',        42000, 26, 'Chennai'),
+(6,  'Farhan',     'Finance',   53000, 31, 'Delhi'),
+(7,  'Gauri',      'IT',        58000, 30, 'Hyderabad'),
+(8,  'Harshita',   'HR',        45000, 27, 'Pune'),
+(9,  'Ishaan',     'Finance',   57000, 34, 'Kolkata'),
+(10, 'Jhanvi',     'IT',        64000, 36, 'Bangalore'),
+(11, 'Karan',      'HR',        46000, 29, 'Ahmedabad'),
+(12, 'Lakshmi',    'Finance',   59000, 33, 'Hyderabad'),
+(13, 'Manish',     'IT',        61000, 31, 'Delhi'),
+(14, 'Neha',       'HR',        44000, 25, 'Chennai'),
+(15, 'Omkar',      'Finance',   52000, 28, 'Pune'),
+(16, 'Pooja',      'IT',        65000, 34, 'Mumbai'),
+(17, 'Rajat',      'HR',        47000, 30, 'Bangalore'),
+(18, 'Sneha',      'Finance',   60000, 35, 'Delhi'),
+(19, 'Tanvi',      'IT',        63000, 32, 'Hyderabad'),
+(20, 'Uday',       'HR',        48000, 27, 'Kolkata');
 
 
 
