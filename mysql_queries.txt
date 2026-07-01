@@ -1021,7 +1021,33 @@ INSERT INTO employees (emp_id, name, department, salary, age, city) VALUES
 
 
 
+===============================================================================================
+-- STEP 1: Create Table
+CREATE TABLE StudentScores (
+ id INT,
+ name VARCHAR(100),
+ subject VARCHAR(50),
+ marks INT
+ );
 
+-- STEP 2: Insert Records
+INSERT INTO StudentScores VALUES
+ (1, 'Alice', 'Math', 95),
+ (2, 'Bob', 'Math', 76),
+ (3, 'Charlie', 'Math', 59),
+ (4, 'Diana', 'Math', 88),
+ (5, 'Eve', 'Math', 40),
+ (6, 'Frank', 'Math', 95),
+ (7, 'Grace', 'Science', 67),
+ (8, 'Henry', 'Science', 82),
+ (9, 'Ivy', 'English', 91),
+ (10, 'Jack', 'English', 55),
+ (11, 'Kevin', 'Math', 73),
+ (12, 'Lily', 'Science', 48),
+ (13, 'Mia', 'English', 100),
+ (14, 'Noah', 'Math', 64),
+ (15, 'Olivia', 'Science', 79);
+------------------------------------------------------------------------------------------------------
 
 
 
