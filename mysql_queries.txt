@@ -1050,6 +1050,33 @@ INSERT INTO StudentScores VALUES
 ------------------------------------------------------------------------------------------------------
 
 
+CREATE TABLE Employees (
+ id INT,
+ name VARCHAR(100),
+ department VARCHAR(100),
+ salary INT,
+ isactive BOOLEAN
+ );
+
+ -- STEP 2: Insert Records
+INSERT INTO Employees VALUES
+ (1, 'Rahul Sharma', 'IT', 50000, TRUE),
+ (2, 'Priya Reddy', 'HR', 30000, TRUE),
+ (3, 'Amit Kumar', 'Finance', 45000, FALSE),
+ (4, 'Sneha Patel', 'IT', 35000, TRUE),
+ (5, 'Vikram Singh', 'Finance', 28000, TRUE),
+ (6, 'Anjali Mehta', 'HR', 32000, FALSE),
+ (7, 'Kiran Rao', 'IT', 60000, TRUE),
+ (8, 'Pooja Verma', 'Marketing', 27000, TRUE),
+ (9, 'Ramesh Naidu', 'Sales', 38000, TRUE),
+ (10, 'Deepika Joshi', 'Finance', 52000, TRUE),
+ (11, 'Suresh Babu', 'Marketing', 29000, FALSE),
+ (12, 'Neha Kapoor', 'HR', 41000, TRUE),
+ (13, 'Arjun Reddy', 'IT', 55000, FALSE),
+ (14, 'Lakshmi Devi', 'Sales', 33000, TRUE),
+ (15, 'Nikhil Jain', 'IT', 47000, TRUE);
+
+
 
 
 
