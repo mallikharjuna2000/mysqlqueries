@@ -1104,6 +1104,35 @@ INSERT INTO Orders VALUES
  (15, 'Oliver', '2024-05-25', 900.00);
 
 
+----------------------------------------------------------------------------
+-- STEP 1: Create Table
+CREATE TABLE Emp (
+ id INT,
+ name VARCHAR(100),
+ dept VARCHAR(20),
+ salary INT
+ );
+
+-- STEP 2: Insert Records
+INSERT INTO Emp VALUES
+ (1, 'Alice', 'HR', 35000),
+ (2, 'Bob', 'IT', 50000),
+ (3, 'Charlie', 'Finance', 45000),
+ (4, 'Diana', 'Marketing', 40000),
+ (5, 'Eve', 'IT', 55000),
+ (6, 'Frank', 'Finance', 48000),
+ (7, 'Grace', 'Sales', 37000),
+ (8, 'Henry', 'Admin', 42000),
+ (9, 'Ivy', 'HR', 39000),
+ (10, 'Jack', 'Sales', 46000),
+ (11, 'Kevin', 'IT', 60000),
+ (12, 'Lily', 'Marketing', 41000),
+ (13, 'Michael', 'Admin', 38000),
+ (14, 'Nancy', 'Finance', 52000),
+ (15, 'Oliver', 'HR', 43000);
+
+SELECT*FROM EMP;
+
 
 
 
