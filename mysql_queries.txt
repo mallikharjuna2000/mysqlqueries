@@ -1172,7 +1172,6 @@ CREATE TABLE STUDENTS (
     City VARCHAR(30)
 );
 
- Insert Sample Data (without StudentID)
 INSERT INTO STUDENTS (Name, Age, Department, Marks, City) VALUES
 ('Anil', 20, 'CSE', 85, 'Hyderabad'),
 ('Sneha', 22, 'ECE', 75, 'Mumbai'),
