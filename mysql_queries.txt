@@ -1214,6 +1214,108 @@ INSERT INTO sales (sale_id, product, category, units_sold, unit_price, region) V
 (15, 'Mobile',      'Electronics', 14, 20000, 'North');
 
 
+=====================================================================================
+Std Management System
+----------------------------
+-- Create Database
+CREATE DATABASE studentdb;
+
+-- Use Database
+USE studentdb;
+
+-- Create Students Table
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    enrollment_year INT
+);
+
+-- Create Subjects Table
+CREATE TABLE Subjects (
+    subject_id INT PRIMARY KEY,
+    subject_name VARCHAR(50)
+);
+
+-- Create Exams Table
+CREATE TABLE Exams (
+    exam_id INT PRIMARY KEY,
+    exam_name VARCHAR(50),
+    exam_date DATE
+);
+
+-- Create Marks Table
+CREATE TABLE Marks (
+    mark_id INT PRIMARY KEY,
+    student_id INT,
+    subject_id INT,
+    exam_id INT,
+    score INT,
+    
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (subject_id) REFERENCES Subjects(subject_id),
+    FOREIGN KEY (exam_id) REFERENCES Exams(exam_id)
+);
+
+
+-- Insert Students Data
+INSERT INTO Students VALUES
+(1, 'Aarav', 'Sharma', 2023),
+(2, 'Diya', 'Patel', 2023),
+(3, 'Vihaan', 'Rao', 2024),
+(4, 'Ananya', 'Singh', 2024);
+
+-- Insert Subjects Data
+INSERT INTO Subjects VALUES
+(101, 'Mathematics'),
+(102, 'Science'),
+(103, 'Hindi Literature');
+
+-- Insert Exams Data
+INSERT INTO Exams VALUES
+(1, 'Half-Yearly 2024', '2024-09-15'),
+(2, 'Final Annual 2024', '2024-03-20');
+
+-- Insert Marks Data
+INSERT INTO Marks VALUES
+(1, 1, 101, 1, 85),  
+(2, 1, 102, 1, 90),  
+(3, 2, 101, 1, 75),  
+(4, 2, 102, 1, 60),  
+(5, 3, 101, 1, 95),  
+(6, 1, 101, 2, 88),  
+(7, 2, 101, 2, 79),  
+(8, 3, 101, 2, 92);
+
+-- Verify Data
+SELECT * FROM Students;
+SELECT * FROM Subjects;
+SELECT * FROM Exams;
+SELECT * FROM Marks;
+ 
+ 
+2.   Practice Questions
+ 
+Level 1: Simple (Basic Selection & Filtering)
+ ---------------------------------------------
+1.Retrieve all students: List the first name and last name of every student.
+2.Filter by Score: Find all entries in the Marks table where the score is greater than 80.
+3. Sort Data: List all exams sorted by their date, starting with the most recent.
+ 
+ 
+Level 2: Intermediate (Joins & Aggregation)
+ -------------------------------------------
+4. Student Marks: List the First Name, Subject Name, and Score for every mark recorded.
+5. Subject Averages: Calculate the average score for each subject. Display the Subject Name and the Average Score.
+6. Count Exams: How many marks have been recorded specifically for "Aarav Sharma"?
+ 
+ 
+Level 3: Complex (Subqueries, Grouping & Logic)
+----------------------------------------------
+7.Top Performer: Find the student (First Name, Last Name) who has the highest single score in any exam.
+8.Scores by Exam: Display the Exam Name and the total sum of scores for that exam, but only for exams where the total sum is greater than 250.
+9. Pass/Fail Label: Create a report showing the Student Name, Subject, Score, and a status column that says "Pass" if the score is 70 or above, and "Fail" if below.
+ 
 
 
 
