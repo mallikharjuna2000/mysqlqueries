@@ -1770,6 +1770,251 @@ select*from project;
 select*from department;
 
 
+=========================================================================
+CREATE TABLE country (
+    Code            VARCHAR(3) PRIMARY KEY,
+    Name            VARCHAR(100) NOT NULL,
+    Continent       VARCHAR(30)  NOT NULL,
+    Region          VARCHAR(50)  NOT NULL,
+    Population      BIGINT       NOT NULL,
+    LifeExpectancy  DECIMAL(4,1),
+    GNP             DECIMAL(15,2),
+    Capital         INT
+);
+
+CREATE TABLE city (
+    ID           INT PRIMARY KEY AUTO_INCREMENT,
+    Name         VARCHAR(100) NOT NULL,
+    CountryCode  VARCHAR(3)   NOT NULL,
+    District     VARCHAR(50),
+    Population   BIGINT       NOT NULL
+);
+
+CREATE TABLE countrylanguage (
+    CountryCode  VARCHAR(3)  NOT NULL,
+    Language     VARCHAR(50) NOT NULL,
+    IsOfficial   ENUM('T','F') NOT NULL,
+    Percentage   DECIMAL(4,1)
+);
+
+-- 2. INSERT RECORDS INTO city (95 rows) — insert BEFORE country, since
+--    country.Capital references city.ID
+
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (1,'Berlin','DEU','Berlin',3677000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (2,'Hamburg','DEU','Hamburg',1900000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (3,'Munich','DEU','Bavaria',1500000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (4,'Paris','FRA','Ile-de-France',2140000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (5,'Marseille','FRA','PACA',870000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (6,'Lyon','FRA','Auvergne-Rhone-Alpes',520000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (7,'London','GBR','England',8980000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (8,'Birmingham','GBR','England',1145000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (9,'Manchester','GBR','England',553000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (10,'Rome','ITA','Lazio',2870000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (11,'Milan','ITA','Lombardy',1370000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (12,'Naples','ITA','Campania',950000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (13,'Madrid','ESP','Madrid',3280000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (14,'Barcelona','ESP','Catalonia',1620000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (15,'Valencia','ESP','Valencia',800000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (16,'Warsaw','POL','Masovian',1860000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (17,'Krakow','POL','Lesser Poland',780000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (18,'Amsterdam','NLD','North Holland',905000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (19,'Rotterdam','NLD','South Holland',656000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (20,'Brussels','BEL','Brussels',1220000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (21,'Antwerp','BEL','Antwerp',530000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (22,'Stockholm','SWE','Stockholm',980000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (23,'Gothenburg','SWE','Vastra Gotaland',580000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (24,'Lisbon','PRT','Lisbon',545000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (25,'Porto','PRT','Porto',230000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (26,'Athens','GRC','Attica',660000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (27,'Thessaloniki','GRC','Central Macedonia',320000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (28,'Monaco-Ville','MCO','Monaco',1300);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (29,'Abuja','NGA','Federal Capital Territory',1780000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (30,'Lagos','NGA','Lagos',15400000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (31,'Kano','NGA','Kano',4100000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (32,'Cairo','EGY','Cairo',10100000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (33,'Alexandria','EGY','Alexandria',5280000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (34,'Pretoria','ZAF','Gauteng',2470000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (35,'Johannesburg','ZAF','Gauteng',5780000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (36,'Cape Town','ZAF','Western Cape',4710000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (37,'Nairobi','KEN','Nairobi',4400000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (38,'Mombasa','KEN','Mombasa',1300000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (39,'Addis Ababa','ETH','Addis Ababa',5230000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (40,'Accra','GHA','Greater Accra',2560000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (41,'Kumasi','GHA','Ashanti',3350000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (42,'Rabat','MAR','Rabat-Sale',580000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (43,'Casablanca','MAR','Casablanca-Settat',3750000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (44,'Algiers','DZA','Algiers',2760000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (45,'Oran','DZA','Oran',850000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (46,'Beijing','CHN','Beijing',21890000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (47,'Shanghai','CHN','Shanghai',24870000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (48,'Shenzhen','CHN','Guangdong',17560000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (49,'New Delhi','IND','Delhi',34700000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (50,'Mumbai','IND','Maharashtra',21300000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (51,'Bengaluru','IND','Karnataka',13600000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (52,'Tokyo','JPN','Tokyo',37400000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (53,'Osaka','JPN','Osaka',19100000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (54,'Jakarta','IDN','Jakarta',10900000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (55,'Surabaya','IDN','East Java',2870000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (56,'Islamabad','PAK','Islamabad',1140000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (57,'Karachi','PAK','Sindh',16800000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (58,'Lahore','PAK','Punjab',13000000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (59,'Dhaka','BGD','Dhaka',22400000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (60,'Chittagong','BGD','Chittagong',5200000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (61,'Hanoi','VNM','Hanoi',8400000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (62,'Ho Chi Minh City','VNM','Ho Chi Minh',9300000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (63,'Bangkok','THA','Bangkok',10700000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (64,'Chiang Mai','THA','Chiang Mai',1200000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (65,'Seoul','KOR','Seoul',9500000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (66,'Busan','KOR','Busan',3400000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (67,'Riyadh','SAU','Riyadh',7680000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (68,'Jeddah','SAU','Makkah',4780000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (69,'Washington','USA','District of Columbia',690000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (70,'New York','USA','New York',8800000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (71,'Los Angeles','USA','California',3900000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (72,'Chicago','USA','Illinois',2700000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (73,'Ottawa','CAN','Ontario',1070000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (74,'Toronto','CAN','Ontario',2930000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (75,'Vancouver','CAN','British Columbia',675000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (76,'Mexico City','MEX','Distrito Federal',9200000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (77,'Guadalajara','MEX','Jalisco',1500000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (78,'Brasilia','BRA','Distrito Federal',3100000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (79,'Sao Paulo','BRA','Sao Paulo',12300000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (80,'Rio de Janeiro','BRA','Rio de Janeiro',6750000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (81,'Buenos Aires','ARG','Buenos Aires',3080000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (82,'Cordoba','ARG','Cordoba',1450000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (83,'Bogota','COL','Bogota',7970000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (84,'Medellin','COL','Antioquia',2530000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (85,'Lima','PER','Lima',9700000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (86,'Arequipa','PER','Arequipa',1080000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (87,'Santiago','CHL','Santiago',6270000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (88,'Valparaiso','CHL','Valparaiso',300000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (89,'Caracas','VEN','Distrito Capital',2900000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (90,'Maracaibo','VEN','Zulia',1650000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (91,'Canberra','AUS','Australian Capital Territory',470000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (92,'Sydney','AUS','New South Wales',5310000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (93,'Melbourne','AUS','Victoria',5150000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (94,'Wellington','NZL','Wellington',215000);
+INSERT INTO city (ID,Name,CountryCode,District,Population) VALUES (95,'Auckland','NZL','Auckland',1700000);
+
+-- 3. INSERT RECORDS INTO country (41 rows)
+
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('ARG','Argentina','South America','South America',45800000,76.7,630000.00,81);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('AUS','Australia','Oceania','Australia and New Zealand',26600000,83.3,1690000.00,91);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('BEL','Belgium','Europe','Western Europe',11600000,82.0,590000.00,20);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('BGD','Bangladesh','Asia','Southern and Central Asia',172000000,72.0,460000.00,59);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('BRA','Brazil','South America','South America',216400000,75.9,1920000.00,78);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('CAN','Canada','North America','North America',38900000,82.4,2140000.00,73);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('CHL','Chile','South America','South America',19600000,80.2,317000.00,87);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('CHN','China','Asia','Eastern Asia',1412000000,78.2,17960000.00,46);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('COL','Colombia','South America','South America',52200000,73.0,343000.00,83);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('DEU','Germany','Europe','Western Europe',83200000,81.0,4260000.00,1);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('DZA','Algeria','Africa','Northern Africa',45400000,77.1,195000.00,44);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('EGY','Egypt','Africa','Northern Africa',112700000,71.8,435000.00,32);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('ESP','Spain','Europe','Southern Europe',47400000,83.5,1430000.00,13);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('ETH','Ethiopia','Africa','Eastern Africa',126500000,66.2,126000.00,39);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('FRA','France','Europe','Western Europe',68000000,82.5,2780000.00,4);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('GBR','United Kingdom','Europe','British Isles',67300000,81.2,3130000.00,7);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('GHA','Ghana','Africa','Western Africa',33500000,64.6,77000.00,40);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('GRC','Greece','Europe','Southern Europe',10400000,81.9,210000.00,26);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('IDN','Indonesia','Asia','Southeast Asia',277500000,68.0,1320000.00,54);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('IND','India','Asia','Southern and Central Asia',1428000000,70.2,3730000.00,49);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('ITA','Italy','Europe','Southern Europe',59000000,83.2,2010000.00,10);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('JPN','Japan','Asia','Eastern Asia',123300000,84.5,4230000.00,52);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('KEN','Kenya','Africa','Eastern Africa',55100000,66.7,113000.00,37);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('KOR','South Korea','Asia','Eastern Asia',51700000,83.5,1670000.00,65);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('MAR','Morocco','Africa','Northern Africa',37800000,74.0,135000.00,42);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('MCO','Monaco','Europe','Southern Europe',39000,85.9,7500.00,28);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('MEX','Mexico','North America','Central America',128900000,70.7,1420000.00,76);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('NGA','Nigeria','Africa','Western Africa',223800000,55.8,477000.00,29);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('NLD','Netherlands','Europe','Western Europe',17700000,82.3,990000.00,18);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('NZL','New Zealand','Oceania','Australia and New Zealand',5200000,82.5,250000.00,94);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('PAK','Pakistan','Asia','Southern and Central Asia',240500000,66.6,375000.00,56);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('PER','Peru','South America','South America',34400000,72.9,242000.00,85);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('POL','Poland','Europe','Eastern Europe',37700000,78.0,690000.00,16);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('PRT','Portugal','Europe','Southern Europe',10300000,82.1,250000.00,24);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('SAU','Saudi Arabia','Asia','Middle East',36900000,76.9,1010000.00,67);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('SWE','Sweden','Europe','Nordic Countries',10500000,83.0,590000.00,22);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('THA','Thailand','Asia','Southeast Asia',71800000,79.3,495000.00,63);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('USA','United States','North America','North America',339900000,79.3,25460000.00,69);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('VEN','Venezuela','South America','South America',28300000,72.1,90000.00,89);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('VNM','Vietnam','Asia','Southeast Asia',98900000,73.6,410000.00,61);
+INSERT INTO country (Code,Name,Continent,Region,Population,LifeExpectancy,GNP,Capital) VALUES ('ZAF','South Africa','Africa','Southern Africa',60400000,65.3,405000.00,34);
+
+-- 4. INSERT RECORDS INTO countrylanguage (60 rows)
+
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('ARG','Spanish','T',96.8);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('AUS','English','T',81.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('BEL','French','T',40.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('BEL','Dutch','T',59.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('BGD','Bengali','T',98.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('BRA','Portuguese','T',97.5);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('CAN','English','T',58.7);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('CAN','French','T',22.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('CHL','Spanish','T',99.5);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('CHN','Chinese','T',92.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('COL','Spanish','T',99.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('DEU','German','T',92.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('DZA','Berber languages','T',17.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('DZA','Arabic','T',83.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('EGY','Arabic','T',98.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('ESP','Catalan','F',17.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('ESP','Spanish','T',74.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('ETH','Oromo','F',25.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('ETH','Amharic','T',30.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('FRA','French','T',90.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('GBR','English','T',95.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('GHA','English','T',100.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('GRC','Greek','T',99.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('IDN','Indonesian','T',100.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('IND','Bengali','F',8.1);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('IND','Hindi','T',41.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('IND','English','T',12.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('ITA','Italian','T',93.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('JPN','Japanese','T',99.1);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('KEN','Swahili','T',60.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('KEN','English','T',20.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('KOR','Korean','T',100.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('MAR','Arabic','T',65.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('MAR','Berber languages','T',28.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('MCO','Monegasque','F',12.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('MCO','French','T',58.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('MEX','Spanish','T',92.7);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('NGA','English','T',100.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('NGA','Hausa','F',25.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('NGA','Yoruba','F',21.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('NLD','Dutch','T',95.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('NZL','English','T',91.2);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('NZL','Maori','T',4.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('PAK','English','T',1.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('PAK','Urdu','T',8.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('PAK','Punjabi','F',48.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('PER','Spanish','T',83.9);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('PER','Quechua','T',13.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('POL','Polish','T',97.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('PRT','Portuguese','T',99.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('SAU','Arabic','T',95.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('SWE','Swedish','T',89.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('THA','Thai','T',97.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('USA','English','T',86.2);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('USA','Spanish','F',9.7);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('VEN','Spanish','T',96.9);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('VNM','Vietnamese','T',87.0);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('ZAF','Afrikaans','T',13.5);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('ZAF','English','T',9.6);
+INSERT INTO countrylanguage (CountryCode,Language,IsOfficial,Percentage) VALUES ('ZAF','Zulu','T',23.0);
+
+-- 5. (OPTIONAL) FOREIGN KEY CONSTRAINTS — add these AFTER all data above is loaded
+
+ALTER TABLE city ADD CONSTRAINT fk_city_country FOREIGN KEY (CountryCode) REFERENCES country(Code);
+ALTER TABLE country ADD CONSTRAINT fk_country_capital FOREIGN KEY (Capital) REFERENCES city(ID);
+ALTER TABLE countrylanguage ADD CONSTRAINT fk_lang_country FOREIGN KEY (CountryCode) REFERENCES country(Code);
+
+
+select*from city ;          
+select*from  country;         
+select*from  countrylanguage;
+
+
 
 
 
