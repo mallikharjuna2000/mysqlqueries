@@ -1707,4 +1707,74 @@ INSERT INTO employees (emp_name, dept_id, designation, salary, join_date) VALUES
 ('Suresh',4,'Sales Manager',52000,'2019-08-10'),
 ('Priya',1,'Team Lead',65000,'2022-01-05'),
 ('Kiran',3,'Finance Analyst',48000,'2018-12-11'),
-('Deepika',2,'HR Manager',60000,'2019-10-19')
+('Deepika',2,'HR Manager',60000,'2019-10-19');
+
+
+
+
+
+-- Department Table
+CREATE TABLE Department (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50),
+    location VARCHAR(50)
+);
+
+-- Employee Table
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    salary DECIMAL(10,2),
+    dept_id INT,
+    job VARCHAR(50),
+    hire_date DATE,
+    FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
+);
+
+-- Project Table
+CREATE TABLE Project (
+    proj_id INT PRIMARY KEY,
+    proj_name VARCHAR(50),
+    dept_id INT,
+    budget DECIMAL(12,2),
+    FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
+);
+
+-- Departments
+INSERT INTO Department VALUES
+(1, 'HR', 'Hyderabad'),
+(2, 'IT', 'Bangalore'),
+(3, 'Finance', 'Mumbai'),
+(4, 'Marketing', 'Delhi');
+
+-- Employees
+INSERT INTO Employee VALUES
+(101, 'Amit', 60000, 2, 'Developer', '2021-06-12'),
+(102, 'Ravi', 75000, 2, 'Manager', '2020-03-15'),
+(103, 'Sneha', 55000, 1, 'HR Executive', '2022-01-20'),
+(104, 'Priya', 90000, 3, 'Accountant', '2019-07-10'),
+(105, 'Vikas', 50000, 4, 'Sales Exec', '2022-05-30'),
+(106, 'Anjali', 80000, 2, 'Developer', '2021-08-25'),
+(107, 'Manoj', 95000, 3, 'Manager', '2018-11-05');
+
+-- Projects
+INSERT INTO Project VALUES
+(201, 'ERP System', 2, 1500000),
+(202, 'Recruitment Drive', 1, 300000),
+(203, 'Annual Report', 3, 500000),
+(204, 'Ad Campaign', 4, 700000),
+(205, 'Mobile App', 2, 1200000);
+
+select*from employee;
+select*from project;
+select*from department;
+
+
+
+
+
+
+
+
+
+
