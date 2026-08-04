@@ -2015,7 +2015,29 @@ select*from  country;
 select*from  countrylanguage;
 
 
-
+==================================================================
+Create Table
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    department VARCHAR(30),
+    salary DECIMAL(10,2),
+    experience INT,
+    city VARCHAR(30)
+);
+Insert Records
+INSERT INTO Employees VALUES
+(101,'Rahul','IT',65000,5,'Hyderabad'),
+(102,'Priya','HR',45000,3,'Chennai'),
+(103,'Amit','Finance',70000,6,'Bangalore'),
+(104,'Sneha','IT',80000,8,'Hyderabad'),
+(105,'Kiran','Sales',40000,2,'Pune'),
+(106,'Ravi','HR',50000,4,'Mumbai'),
+(107,'Anjali','IT',90000,10,'Delhi'),
+(108,'Suresh','Finance',55000,5,'Chennai'),
+(109,'Divya','Sales',48000,3,'Hyderabad'),
+(110,'Vikram','IT',75000,7,'Bangalore');
+----------------------------------------------------
 
 
 
