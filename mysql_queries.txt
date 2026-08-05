@@ -2016,7 +2016,7 @@ select*from  countrylanguage;
 
 
 ==================================================================
-Create Table
+-- Create Table
 CREATE TABLE Employees (
     emp_id INT PRIMARY KEY,
     emp_name VARCHAR(50),
@@ -2025,7 +2025,7 @@ CREATE TABLE Employees (
     experience INT,
     city VARCHAR(30)
 );
-Insert Records
+-- Insert Records
 INSERT INTO Employees VALUES
 (101,'Rahul','IT',65000,5,'Hyderabad'),
 (102,'Priya','HR',45000,3,'Chennai'),
@@ -2038,10 +2038,29 @@ INSERT INTO Employees VALUES
 (109,'Divya','Sales',48000,3,'Hyderabad'),
 (110,'Vikram','IT',75000,7,'Bangalore');
 ----------------------------------------------------
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    department VARCHAR(30),
+    salary DECIMAL(10,2),
+    experience INT,
+    city VARCHAR(30)
+);
 
 
 
+INSERT INTO Employees VALUES
+(101,'Rahul','IT',65000,5,'Hyderabad'),
+(102,'Priya','HR',45000,3,'Chennai'),
+(103,'Amit','Finance',70000,6,'Bangalore'),
+(104,'Sneha','IT',80000,8,'Hyderabad'),
+(105,'Kiran','Sales',40000,2,'Pune');
 
-
-
-
+CREATE TABLE Employee_Audit(
+    audit_id INT AUTO_INCREMENT PRIMARY KEY,
+    emp_id INT,
+    action_type VARCHAR(20),
+    old_salary DECIMAL(10,2),
+    new_salary DECIMAL(10,2),
+    action_time DATETIME
+);
