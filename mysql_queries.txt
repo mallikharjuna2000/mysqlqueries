@@ -2117,6 +2117,19 @@ INSERT INTO employees VALUES
 (108,'Mahesh','Patel','mahesh.patel@gmail.com','933-444-5555','Sales','Mumbai',62000),
 (109,'Divya','Gupta','divya.gupta@gmail.com','955-777-8888','Finance','Delhi',49000),
 (110,'Arjun','Rao','arjun.rao@gmail.com','988-999-7777','Developer','Hyderabad',68000);
+============================================================================
+CREATE TABLE student_details (
+    student_id INT,
+    student_name VARCHAR(50),
+    courses VARCHAR(100),
+    trainers VARCHAR(100),
+    trainer_phones VARCHAR(100)
+);
 
+INSERT INTO student_details
+VALUES
+(101, 'Ravi', 'Java, Python', 'Kumar, Ramesh', '9876543210, 9876543211'),
+(102, 'Priya', 'Python, SQL', 'Ramesh, Suresh', '9876543211, 9876543212'),
+(103, 'Arun', 'Java, SQL', 'Kumar, Suresh', '9876543210, 9876543212');
 
 
