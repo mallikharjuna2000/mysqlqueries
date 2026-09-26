@@ -2257,3 +2257,36 @@ VALUES
 SELECT * FROM student_course_1nf; 
 
 
+
+CREATE TABLE student_2nf (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50)
+);
+
+INSERT INTO student_2nf
+VALUES
+(101, 'Ravi'),
+(102, 'Priya'),
+(103, 'Arun');
+
+SELECT*FROM STUDEN_2NF;
+
+CREATE TABLE enrollment_2nf (
+    student_id INT,
+    course VARCHAR(30),
+    trainer VARCHAR(50),
+    trainer_phone VARCHAR(15),
+    PRIMARY KEY (student_id, course),
+    FOREIGN KEY (student_id) REFERENCES student_2nf(student_id)
+);
+
+INSERT INTO enrollment_2nf
+VALUES
+(101, 'Java', 'Kumar', '9876543210'),
+(101, 'Python', 'Ramesh', '9876543211'),
+(102, 'Python', 'Ramesh', '9876543211'),
+(102, 'SQL', 'Suresh', '9876543212'),
+(103, 'Java', 'Kumar', '9876543210'),
+(103, 'SQL', 'Suresh', '9876543212');
+
+SELECT*FROM ENROLLMENT_2NF;
