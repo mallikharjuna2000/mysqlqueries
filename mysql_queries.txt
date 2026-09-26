@@ -2236,3 +2236,24 @@ VALUES
 
 SELECT * FROM student_details;
 
+
+CREATE TABLE student_course_1nf (
+    student_id INT,
+    student_name VARCHAR(50),
+    course VARCHAR(30),
+    trainer VARCHAR(50),
+    trainer_phone VARCHAR(15)
+);
+
+INSERT INTO student_course_1nf
+VALUES
+(101, 'Ravi', 'Java', 'Kumar', '9876543210'),
+(101, 'Ravi', 'Python', 'Ramesh', '9876543211'),
+(102, 'Priya', 'Python', 'Ramesh', '9876543211'),
+(102, 'Priya', 'SQL', 'Suresh', '9876543212'),
+(103, 'Arun', 'Java', 'Kumar', '9876543210'),
+(103, 'Arun', 'SQL', 'Suresh', '9876543212');
+
+SELECT * FROM student_course_1nf; 
+
+
