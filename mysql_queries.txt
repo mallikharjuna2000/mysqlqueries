@@ -2219,4 +2219,20 @@ INSERT INTO Orders (order_id, customer_id, product_id, quantity, order_date, amo
 INSERT INTO Orders (order_id, customer_id, product_id, quantity, order_date, amount) VALUES (11, 2, 3, 2, '2023-06-02', 12000);
 INSERT INTO Orders (order_id, customer_id, product_id, quantity, order_date, amount) VALUES (12, 5, 4, 1, '2023-06-15', 8500);
  
+====================================================================
+CREATE TABLE student_details (
+    student_id INT,
+    student_name VARCHAR(50),
+    courses VARCHAR(100),
+    trainers VARCHAR(100),
+    trainer_phones VARCHAR(100)
+);
+
+INSERT INTO student_details
+VALUES
+(101, 'Ravi', 'Java, Python', 'Kumar, Ramesh', '9876543210, 9876543211'),
+(102, 'Priya', 'Python, SQL', 'Ramesh, Suresh', '9876543211, 9876543212'),
+(103, 'Arun', 'Java, SQL', 'Kumar, Suresh', '9876543210, 9876543212');
+
+SELECT * FROM student_details;
 
