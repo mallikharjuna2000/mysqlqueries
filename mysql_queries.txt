@@ -2290,3 +2290,57 @@ VALUES
 (103, 'SQL', 'Suresh', '9876543212');
 
 SELECT*FROM ENROLLMENT_2NF;
+
+
+CREATE TABLE trainer_3nf (
+    trainer_id INT PRIMARY KEY,
+    trainer_name VARCHAR(50),
+    trainer_phone VARCHAR(15)
+);
+
+
+INSERT INTO trainer_3nf
+VALUES
+(1, 'Kumar', '9876543210'),
+(2, 'Ramesh', '9876543211'),
+(3, 'Suresh', '9876543212');
+
+SELECT*FROM TRAINER_3NF;
+
+CREATE TABLE course_3nf (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(30),
+    trainer_id INT,
+    FOREIGN KEY (trainer_id) REFERENCES trainer_3nf(trainer_id)
+);
+
+INSERT INTO course_3nf
+VALUES
+(1, 'Java', 1),
+(2, 'Python', 2),
+(3, 'SQL', 3);
+
+SELECT*FROM COURSE_3NF;
+
+
+SELECT*FROM STUDENT_2NF;
+CREATE TABLE enrollment_3nf (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES student_2nf(student_id),
+    FOREIGN KEY (course_id) REFERENCES course_3nf(course_id)
+);
+
+INSERT INTO enrollment_3nf
+VALUES
+(101, 1),
+(101, 2),
+(102, 2),
+(102, 3),
+(103, 1),
+(103, 3);
+
+SELECT*FROM  enrollment_3nf;
+
+
